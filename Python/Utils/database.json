@@ -1,0 +1,481 @@
+[
+    {
+        "id": 1,
+        "spans": 
+        [
+            {
+                "text": "fixed stars",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q430297"
+                    }
+                ,
+                "candidate_entities": [
+                    ["Q430297"],
+                    ["Q523"]
+                ],
+                "coarse_mention_type": "Astronomical Object"
+
+            },
+            {
+                "text": "Sun",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q525"
+                    }
+                ,
+                "candidate_entities": [
+                   ["Q525"]
+                ],
+                "coarse_mention_type": "Astronomical Object"
+
+            },
+            {
+                "text": "Earth",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q2"
+                    }
+                ,
+                "candidate_entities": [
+                    ["Q83697636"]
+                ],
+                "coarse_mention_type": "Astronomical Object"
+
+            },
+            {
+                "text": "Philolaus",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q212338"
+                    }
+                ,
+                "candidate_entities": [
+                   ["Q116169"]
+                ],
+                "coarse_mention_type": "Human"
+
+            },
+            {
+                "text": "Aristarchus of Samos",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q140188"
+                    }
+                ,
+                "candidate_entities": [
+                   ["Q103851694"]
+                ],
+                "coarse_mention_type": "Human"
+
+            },
+            {
+                "text": "Plato",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q859"
+                    }
+                ,
+                "candidate_entities": [
+                    ["Q1924441"]
+                ],
+                "coarse_mention_type": "Human"
+
+            },
+            {
+                "text": "Anaximander",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q42458"
+                    }
+                ,
+                "candidate_entities": [
+                    ["Q334687"]
+                ],
+                "coarse_mention_type": "Human"
+
+            },
+            {
+                "text": "Numa Pompilius",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q200031"
+                    }
+                ,
+                "candidate_entities": [
+                  ["Q24808371"]
+                ],
+                "coarse_mention_type": "Human"
+
+            },
+            {
+                "text": "Anaxagoras",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q83041"
+                    }
+                ,
+                "candidate_entities": [
+                    ["Q488558"]
+                ],
+                "coarse_mention_type": "Human"
+
+            },
+            {
+                "text": "Democritus",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q41980"
+                    }
+                ,
+                "candidate_entities": [
+                   ["Q18170716"]
+                ],
+                "coarse_mention_type": "Human"
+
+            },
+            {
+                "text": "Eudoxus",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q185150"
+                    }
+                ,
+                "candidate_entities": [
+                   ["Q128013"]
+                ],
+                "coarse_mention_type": "Human"
+
+            },
+            {
+                "text": "Callippus",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q471218"
+                    }
+                ,
+                "candidate_entities": [
+                   ["Q11910953"]
+                ],
+                "coarse_mention_type": "Human"
+
+            },
+            {
+                "text": "Aristotle",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q868"
+                    }
+                ,
+                "candidate_entities": [
+                    ["Q4791095"]
+                ],
+                "coarse_mention_type": "Human"
+
+            }
+        ]
+    
+    },
+    {
+        "id": 2,
+        "spans": 
+        [
+            {
+                "text": "Sun",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q525"
+                    }
+                ,
+                "candidate_entities": [
+                   ["Q525"]
+                ],
+                "coarse_mention_type": "Astronomical Object"
+
+            },
+            {
+                "text": "Mu Columbae",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q798287"
+                    }
+                ,
+                "candidate_entities": [],
+                "coarse_mention_type": "Astronomical Object"
+
+            },
+            {
+                "text": "Rigel",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q12126"
+                    }
+                ,
+                "candidate_entities": [
+                    ["Q55724022"]
+                   
+                ],
+                "coarse_mention_type": "Astronomical Object"
+
+            },
+            {
+                "text": "VY Canis Major",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q183349"
+                    }
+                ,
+                "candidate_entities": [
+                    ["Q10538"]
+                   
+                ],
+                "coarse_mention_type": "Astronomical Object"
+
+            },
+            {
+                "text": "WOH G64",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q277737"
+                    }
+                ,
+                "candidate_entities": [
+                    [""]
+                   
+                ],
+                "coarse_mention_type": "Astronomical Object"
+
+            },
+            {
+                "text": "UY Scuti",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q14914807"
+                    }
+                ,
+                "candidate_entities": [
+                    ["Q107366119"]
+                   
+                ],
+                "coarse_mention_type": "Astronomical Object"
+
+            },
+            {
+                "text": "R136c",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q19831587"
+                    }
+                ,
+                "candidate_entities": [
+                    [""]
+                ],
+                "coarse_mention_type": "Astronomical Object"
+
+            },
+            {
+                "text": "Supernovae",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q3937"
+                    }
+                ,
+                "candidate_entities": [
+                    [""]
+                   
+                ],
+                "coarse_mention_type": "Astronomical Object"
+
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "spans": 
+        [
+            {
+                "text": "Neil Armstrong",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q1615"
+                    }
+                ,
+                "candidate_entities": [
+                   ["Q90071689"]
+                ],
+                "coarse_mention_type": "Human"
+
+            },
+            {
+                "text": "Buzz Aldrin",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q2252"
+                    }
+                ,
+                "candidate_entities": [
+                   [""]
+                ],
+                "coarse_mention_type": "Human"
+
+            },
+            {
+                "text": "Michael Collins",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q104859"
+                    }
+                ,
+                "candidate_entities": [
+                   ["Q173196"]
+                ],
+                "coarse_mention_type": "Human"
+
+            },
+            {
+                "text": "Gagarin",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q7327"
+                    }
+                ,
+                "candidate_entities": [
+                   ["Q134318"]
+                ],
+                "coarse_mention_type": "Human"
+
+            },
+            {
+                "text": "Shepard",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q174979"
+                    }
+                ,
+                "candidate_entities": [
+                   ["Q47508934"],
+                   ["Q63302672"]
+                ],
+                "coarse_mention_type": "Human"
+
+            },
+            {
+                "text": "Kennedy",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q9696"
+                    }
+                ,
+                "candidate_entities": [
+                   ["Q67761"]
+                ],
+                "coarse_mention_type": "Human"
+
+            },
+            {
+                "text": "Gene Cernan",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q158486"
+                    }
+                ,
+                "candidate_entities": [
+                   [""]
+                ],
+                "coarse_mention_type": "Human"
+
+            },
+            {
+                "text": "Apollo 11",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q43653"
+                    }
+                ,
+                "candidate_entities": [
+                   ["Q61639822"]
+                ],
+                "coarse_mention_type": "spaceflight"
+
+            },
+            {
+                "text": "Saturn V",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q54363"
+                    }
+                ,
+                "candidate_entities": [
+                   [""]
+                ],
+                "coarse_mention_type": "Rocket"
+
+            },
+            {
+                "text": "Sea of Tranquility",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q320936"
+                    }
+                ,
+                "candidate_entities": [
+                   [""]
+                ],
+                "coarse_mention_type": "Astronomical Object"
+
+            },
+            {
+                "text": "Moon",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q405"
+                    }
+                ,
+                "candidate_entities": [
+                   [""]
+                ],
+                "coarse_mention_type": "Astronomical Object"
+
+            },
+            {
+                "text": "Earth",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q2"
+                    }
+                ,
+                "candidate_entities": [
+                   [""]
+                ],
+                "coarse_mention_type": "Astronomical Object"
+
+            },
+            {
+                "text": "Marte",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q111"
+                    }
+                ,
+                "candidate_entities": [
+                   [""]
+                ],
+                "coarse_mention_type": "Planet"
+
+            },
+            {
+                "text": "Apollo 1",
+                "predicted_entity": 
+                    {
+                        "wikidata_entity_id": "Q194082"
+                    }
+                ,
+                "candidate_entities": [
+                   [""]
+                ],
+                "coarse_mention_type": "spaceflight"
+
+            }
+        ]
+    }
+]

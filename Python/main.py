@@ -23,9 +23,9 @@ def getEntities():
     if request.method == 'POST':
         try:
             data = request.get_json()
-            text = data['text']
+            id = data['textID']
             findEntity = Disambiguation()
-            results = findEntity.convertText(text)
+            results = findEntity.convertText(id)
             return jsonify(results)
         except Exception as e:
             return jsonify(success=False, message="Error processing request")

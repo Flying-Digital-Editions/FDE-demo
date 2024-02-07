@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Router } from '@angular/router';
-import * as PizZip from 'pizzip';
 import * as DocxtemplaterModule from 'docxtemplater';
+import { testo1, testo2, testo3 } from '../edited-text';
 const Docxtemplater = DocxtemplaterModule as any;
 
 
@@ -18,10 +18,10 @@ export class LoadingModeComponent {
   formData: any;
   fileContent: string | null = null;
   fileUploaded: boolean = false;
+  isEnabled = false;
   fileName:string = '';
-  emptyFile:boolean = true;
-  isEnabled:boolean= false;
-
+  idText: any = null;
+ 
   constructor(private apiService: ApiService, private router: Router){}
   ngOnInit(): void {}
 
@@ -29,126 +29,53 @@ export class LoadingModeComponent {
     this.router.navigate(path);
   }
   
-  sendText() {
-    const textToAnalyze = this.fileContent !== null ? this.fileContent : this.searchText;
-    if (textToAnalyze) {
-      this.apiService.setText(textToAnalyze);
-      const maxSentencesPerBlock = 20; //con 5 me ne riconosce 14, con 10 me ne ricosce 15, con 15 me ne riconosce 17 -- con sample test, settato su 20
-      const blocks = this.splitTextIntoBlocks(textToAnalyze, maxSentencesPerBlock);
 
-      const allResponses: any[] = [];
-
-      const sendRequest = (index: number) => {
-        if (index < blocks.length) {
-          const block = blocks[index];
-          this.apiService.getAnalyzedText(block).subscribe(response => {
-            console.log(response);
-            allResponses.push(response);
-            sendRequest(index + 1);
-          },
-          error => {
-            console.log("Errore durante la richiesta:", error);
-          });
-        } else {
-          this.handleCombinedResponse(allResponses);
-        }
-      };
-      sendRequest(0);
-    } else {
-      this.fileUploaded = false;
-      this.emptyFile = true;
-    }
-  }
-  
-  
-  splitTextIntoBlocks(text: string, maxSentencesPerBlock: number): string[] {
-    const sentences = text.split(/(?<=[.!?])\s+/); // Suddivide il testo in frasi
-    const blocks: string[] = [];
-  
-    for (let i = 0; i < sentences.length; i += maxSentencesPerBlock) {
-      const block = sentences.slice(i, i + maxSentencesPerBlock).join(' ');
-      blocks.push(block);
-    }
-  
-    return blocks;
-  }
-
-  private handleCombinedResponse(combinedResponse: any[]) {
-    this.apiService.setCombinedResponse(combinedResponse);
-  }
-
-  onTextChange(){
-    if(this.searchText !== ''){
-      this.isEnabled = true;
-    }
-    else{
-      this.isEnabled = false;
-    }
-  }
-
-  onFileChange(event: any) {
-    const fileList: FileList | null = event.target.files;
-    if (fileList && fileList.length > 0) {
-      const file: File = fileList[0];
-  
-      if (file.name.endsWith('.txt')) {
-        this.processTxtFile(file);
-      } else if (file.name.endsWith('.docx')) {
-        this.convertDocxToTxt(file);
-      } else {
-        console.error('Formato del file non supportato.');
-        this.emptyFile = true;
-      }
-    } else {
-      this.fileContent = null;
-      this.emptyFile = true;
-    }
-  }
-  
-  processTxtFile(file: File) {
-    const reader = new FileReader();
-    reader.onload = () => {
-      const fileContent: string | ArrayBuffer | null = reader.result;
-  
-      if (typeof fileContent === 'string') {
-        this.fileUploaded = true;
-        this.emptyFile = false;
-        this.fileContent = fileContent;
-        this.fileName = file.name;
+  setText(id:any){
+    this.idText = id;
+    switch(id){
+      case 1: 
+        this.searchText = testo1;
         this.isEnabled = true;
-      } else {
-        console.error('Failed to read file content as string.');
-      }
-    };  
-    reader.readAsText(file);
+        break;
+      case 2:
+        this.searchText = testo2;
+        this.isEnabled = true;
+        break;
+      case 3:
+        this.searchText = testo3;
+        this.isEnabled = true;
+        break;
+      default:
+        alert("Text not found");
+    }
   }
-  
-  async convertDocxToTxt(docxFile: File) {
-    const fileBuffer = await this.readFile(docxFile);
-    const zip = new PizZip(fileBuffer);
-    const doc = new Docxtemplater();
-    doc.loadZip(zip);
-  
-    const textContent = doc.getFullText();
-  
-    this.fileUploaded = true;
-    this.emptyFile = false;
-    this.isEnabled = true;
-    this.fileContent = textContent;
-    this.fileName = `${docxFile.name}`;
+
+  sendText() {
+    const id = this.idText;
+    switch(id){
+      case 1:
+        this.apiService.setText(testo1);
+          this.apiService.getAnalyzedText(id).subscribe(response => {
+            this.apiService.setCombinedResponse(response);
+          });
+          break;
+      case 2:
+        this.apiService.setText(testo2);
+          this.apiService.getAnalyzedText(id).subscribe(response => {
+            this.apiService.setCombinedResponse(response);
+          });
+          break;
+      case 3:
+        this.apiService.setText(testo3);
+          this.apiService.getAnalyzedText(id).subscribe(response => {
+            this.apiService.setCombinedResponse(response);
+          });
+          break;
+      default:
+        alert("Text analysis not available");
+    }
   }
-  
-  async readFile(file: File): Promise<ArrayBuffer> {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        const arrayBuffer = event.target?.result as ArrayBuffer;
-        resolve(arrayBuffer);
-      };
-      reader.onerror = reject;
-      reader.readAsArrayBuffer(file);
-    });
-  }
+
 }
 
 

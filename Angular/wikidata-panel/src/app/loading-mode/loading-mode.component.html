@@ -2,9 +2,10 @@
   <div class="row files-upload">
     <div class="split left col-md-auto">
         <div class="centered">
-          <h2>Insert your text here</h2>
-          <div>
-            <textarea pInputTextarea cols="45" rows="13" [(ngModel)]="searchText" placeholder="Once Upon a Time..." (ngModelChange)="onTextChange()"></textarea>
+          <h2>Select a text</h2>
+          <div style="display: inline-table;">
+            <button class="button-header" (click)="setText(1)">Testo 1</button> <button class="button-header" (click)="setText(2)">Testo 2</button> <button class="button-header" (click)="setText(3)">Testo 3</button>
+            <textarea pInputTextarea cols="45" rows="13" [(ngModel)]="searchText" placeholder="Once Upon a Time..." [disabled]="true"></textarea>
           </div>
         </div>
       </div>
@@ -12,9 +13,9 @@
       <div class = "split right col-md-auto">
         <div class="centered">
           <h2>Or choose your file</h2>
-            <label for="files"> Choose <i class="pi pi-upload"></i> </label><span *ngIf="fileUploaded"> {{fileName}}</span>
-            <input type="file" id="files" accept=".txt, .docx" (change)="onFileChange($event)" style="display: none;">   
-            <span *ngIf="emptyFile && !fileUploaded">No file uploaded</span>
+            <label for="files" class="disabledButton"> Choose <i class="pi pi-upload"></i> </label><span> {{fileName}}</span>
+            <input type="file" id="files" accept=".txt, .docx" style="display: none;" [disabled]="true">   
+            <span>No file uploaded</span>
         </div>
       </div>
   </div>

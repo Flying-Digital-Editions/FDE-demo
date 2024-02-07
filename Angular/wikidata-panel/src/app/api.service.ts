@@ -20,11 +20,11 @@ export class ApiService {
 
   constructor(private http:HttpClient) { }
 
-  setText(text:string){
+  setText(text:any){
     this.inText = text;
   }
 
-  getText(): string{
+  getText(): any{
     return this.inText;
   }
 
@@ -52,20 +52,16 @@ export class ApiService {
     return this.editedContent;
   }
 
-  getAnalyzedText(textBlock: string){
+  getAnalyzedText(id:number){
     const apiUrl = `${APIURL}/getEntities`;
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    const requestBody = { text: textBlock };
+    const requestBody = { textID: id };
     return this.http.post(apiUrl, requestBody, {headers});
   }
 
   
-  setCombinedResponse(combinedResponse: any[]) {
-    const filteredResponses = combinedResponse.filter(response => response.success !== false);
-    const flattenedArray = filteredResponses
-      .flatMap(innerArrays => innerArrays.flat())
-      .filter(item => item && item.ID && item.Name && item.Type);
-    this.apiResponseSubject.next(flattenedArray);
+  setCombinedResponse(textNumber: any) {
+    this.apiResponseSubject.next(textNumber);
   }
 
   getResponseSubject(){

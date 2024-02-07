@@ -101,6 +101,10 @@ button{
     background-color: lightgoldenrodyellow;
   }
 
+  p-dialog.dialogInfo div.p-dialog.p-component{
+    width: 60rem!important;
+    padding: 5%!important;
+  }
   .p-tabview.p-component{
     min-width: 20vw;
   }
@@ -142,4 +146,12 @@ button{
 
   div.p-tabview-panel span{
     padding-bottom: 3px;
+  }
+
+  .footer button.footer-button{
+    border: none;
+    background: none;
+    font-size: small;
+    font-weight: 600;
+    text-decoration: underline;
   }
