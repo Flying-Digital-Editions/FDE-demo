@@ -52,15 +52,18 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "githubPages": {
+              "baseHref": "/wikidata-panel/"
             }
           },
           "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options":{
-              "browserTarget": "wikidata-panel:build",
-              "proxyConfig": "src/proxy.conf.json"
+          "options": {
+            "browserTarget": "wikidata-panel:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {
