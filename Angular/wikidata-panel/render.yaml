@@ -6,4 +6,4 @@ services:
     env:
       - key: NODE_VERSION
         value: 20.5.1
-    startCommand: npm start 
+    startCommand: npm start --port 8080
