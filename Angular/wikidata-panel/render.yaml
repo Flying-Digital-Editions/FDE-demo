@@ -1,0 +1,7 @@
+services:
+  - name: wikidata-panel
+    buildCommand: npm install && npm run build
+    env:
+      - key: NODE_VERSION
+        value: 20.5.1
+    startCommand: npm start 
