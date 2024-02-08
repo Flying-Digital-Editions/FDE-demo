@@ -23,7 +23,8 @@ export class LoadingModeComponent {
   idText: any = null;
  
   constructor(private apiService: ApiService, private router: Router){}
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   goToUrl(path:any){
     this.router.navigate(path);
@@ -54,18 +55,21 @@ export class LoadingModeComponent {
     const id = this.idText;
     switch(id){
       case 1:
+        this.apiService.setEditedContent('', [], null);
         this.apiService.setText(testo1);
           this.apiService.getAnalyzedText(id).subscribe(response => {
             this.apiService.setCombinedResponse(response);
           });
           break;
       case 2:
+        this.apiService.setEditedContent('', [], null);
         this.apiService.setText(testo2);
           this.apiService.getAnalyzedText(id).subscribe(response => {
             this.apiService.setCombinedResponse(response);
           });
           break;
       case 3:
+        this.apiService.setEditedContent('', [], null);
         this.apiService.setText(testo3);
           this.apiService.getAnalyzedText(id).subscribe(response => {
             this.apiService.setCombinedResponse(response);

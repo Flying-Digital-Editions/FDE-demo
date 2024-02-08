@@ -24,6 +24,9 @@ export class ViewModeComponent {
   entities: { type: string, names:{ name: string, position: number }[]}[] = [];
   spanPos: {name:string, position:number}[] = [];
   spanPositions:{ name:string, positions:number[]}[] = [];
+  contentSpan: Array<string> = []
+  contentMetadata: any = null;
+  modifiedText = '';
 
   constructor(private apiService: ApiService, private sanitizer: DomSanitizer, private el: ElementRef, private infoService: InfoService, private cdr: ChangeDetectorRef){}
 
@@ -31,6 +34,8 @@ export class ViewModeComponent {
      this.editedContentSubscription = this.apiService.editedContent$.subscribe(
       (content: any) => {
         this.editedContent = this.formatText(content.text, content.spans);
+        this.contentSpan = content.spans;
+        this.contentMetadata = content.metadata;
         this.author = content.metadata && content.metadata['Author'] !== undefined ? content.metadata['Author'] : '';
         this.title = content.metadata && content.metadata['Title'] !== undefined ? content.metadata['Title'] : '';
         this.setHeaders(content.spans);      
@@ -106,17 +111,16 @@ formatText(text: string, response: any) {
   const sentences = text.match(/[^.!?]*((?:[.!?]["']*)|(?:$))/g) || [];
 
   let sentenceCountProcessed = 0;
-  let modifiedText = '';
 
   sentences.forEach((sentence) => {
       sentenceCountProcessed++;
       if (sentenceCountProcessed % sentencesBetweenNewLines === 0 && sentenceCountProcessed < sentences.length) {
-          modifiedText += `<br/><br/>`;
+          this.modifiedText += `<br/><br/>`;
       }
-      modifiedText += sentence;
+      this.modifiedText += sentence;
   });
 
-  this.sanitizedText = this.sanitizer.bypassSecurityTrustHtml(modifiedText);
+  this.sanitizedText = this.sanitizer.bypassSecurityTrustHtml(this.modifiedText);
   this.editedContent = this.sanitizedText;
   return this.editedContent;
 }
@@ -163,8 +167,6 @@ formatText(text: string, response: any) {
         }
     });
   }
-
-  
   
   getIdInfo(itemType:string, itemId:string){
     this.infoService.getEntityInfo(itemType, itemId).subscribe((response)=>{
@@ -179,6 +181,7 @@ formatText(text: string, response: any) {
     this.cardOpen = event;
   }
   ngOnDestroy(): void {
+    this.apiService.setEditedContent(this.modifiedText, this.contentSpan, this.contentMetadata);
     this.editedContentSubscription.unsubscribe();
   }
 

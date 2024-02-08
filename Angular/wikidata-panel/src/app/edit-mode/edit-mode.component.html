@@ -10,7 +10,7 @@
   <p-progressSpinner></p-progressSpinner>
 </div>
 
-<div class="row addButton" *ngIf="!loading === true">
+<div class="row addButton" *ngIf="!loading">
   <button (click)="addNewSpan()">Add new entity</button>
   <button (click)="showDialogMetadata()">Add Metadata</button>
   <button *ngIf="!spansSaved && !loading === true" [routerLink]="['../view']" (click)="saveText()">Save</button>
@@ -24,7 +24,7 @@
 
 </div>
 <div class="row">
-  <div class="col-md-auto listSpan" *ngIf="!loading === true">
+  <div class="col-md-auto listSpan" *ngIf="!loading">
     <ol>
       <ng-container *ngFor="let item of fragList">
         <li>
@@ -39,7 +39,7 @@
   </div>
 
 
-<div class="col-md-auto bookMode" *ngIf="!loading === true"  (mouseup)="highlightAndOpenCard($event)">
+<div class="col-md-auto bookMode" *ngIf="!loading"  (mouseup)="highlightAndOpenCard($event)">
   <div [innerHtml]="editableText" id="book"></div>
 </div>
 
