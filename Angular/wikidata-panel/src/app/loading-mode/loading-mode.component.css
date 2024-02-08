@@ -1,19 +1,12 @@
 .row.files-upload{
   display:inline-flex;
-  margin-bottom:10px;
   justify-content: space-around;
-  width:100vw;
+  width: 100%;
 }
 
 h2{
   text-align: center;
   color: #495b69;
-}
-
-.center{
-    text-align: center;
-    z-index: 1;
-    position: relative;
 }
 
 textarea{
@@ -32,6 +25,7 @@ textarea{
 
 .right {
   right: 0;
+  height: 30vh;
 }
 
 .centered {

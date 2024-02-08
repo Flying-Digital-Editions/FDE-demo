@@ -1,16 +1,15 @@
-<div>
+<div class="container">
   <div class="row files-upload">
-    <div class="split left col-md-auto">
+    <div class="split left col-md-6">
         <div class="centered">
           <h2>Select a text</h2>
           <div style="display: inline-table;">
             <button class="button-header" (click)="setText(1)">Testo 1</button> <button class="button-header" (click)="setText(2)">Testo 2</button> <button class="button-header" (click)="setText(3)">Testo 3</button>
-            <textarea pInputTextarea cols="45" rows="13" [(ngModel)]="searchText" placeholder="Once Upon a Time..." [disabled]="true"></textarea>
+            <textarea pInputTextarea [(ngModel)]="searchText" placeholder="Once Upon a Time..." [disabled]="true"></textarea>
           </div>
         </div>
       </div>
-
-      <div class = "split right col-md-auto">
+      <div class = "split right col-md-6">
         <div class="centered">
           <h2>Or choose your file</h2>
             <label for="files" class="disabledButton"> Choose <i class="pi pi-upload"></i> </label><span> {{fileName}}</span>
@@ -19,7 +18,9 @@
         </div>
       </div>
   </div>
-  <div class="row center">  
-    <button pButton [routerLink]="['./edit']" (click)="sendText()" label="Analyse Text" [disabled]="!isEnabled" [ngClass]="{'disabledButton': !isEnabled }"></button>
+  <div class="row">  
+    <div class="col-md-12 d-flex justify-content-center align-items-center">
+      <button pButton [routerLink]="['./edit']" (click)="sendText()" label="Analyse Text" [disabled]="!isEnabled" [ngClass]="{'disabledButton': !isEnabled }"></button>
+    </div>
   </div>
 </div>

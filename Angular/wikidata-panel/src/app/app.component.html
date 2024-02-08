@@ -1,12 +1,12 @@
-<header class="header">
+<nav class="navbar header">
     <div class="logo">
         <img src="../assets/images/logo3.png" alt="image">
-        <h1>Flying Digital Editions</h1>
+        <span>Flying Digital Editions</span>
     </div>
   <div class="home">
       <button routerLink="/">Go to Loading Page</button>
   </div>
-</header>
+</nav>
 <router-outlet></router-outlet>
 <p-dialog [(visible)]="dialogVisible" class="dialogInfo">
     <p>
@@ -20,7 +20,7 @@
       For more information, go to the <a href="https://github.com/Flying-Digital-Editions/FDE-demo">demo repository</a>.
     </p>
   </p-dialog>
-<footer class="footer">
+<footer class="footer fixed-bottom">
     <div style="padding-left: 3vw; font-size:small">
         <p>Alma Mater Studiorum - Università di Bologna</p>
         <p>Sara Vellone - 2024</p>

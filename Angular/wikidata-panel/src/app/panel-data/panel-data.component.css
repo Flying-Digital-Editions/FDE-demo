@@ -1,10 +1,10 @@
 .card {
-    display: inline-block;
+    display: block;
     padding: 2%;
     background-color: lightgray;
-    max-height: 52.1vh;
-    min-height: 44vh;
-    overflow:auto;
+    max-height: 60vh;
+    overflow-y:auto;
+    overflow-x: hidden;
   }
 
   .card h4{
