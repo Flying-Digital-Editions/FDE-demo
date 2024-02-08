@@ -1,9 +1,9 @@
 services:
   - name: wikidata-panel
     buildCommand: npm install && npm run build
-    memory: 6GB
+    memory: 10GB
     port: 8080
     env:
       - key: NODE_VERSION
-        value: 20.5.1
+        value: 20.10.0
     startCommand: npm start --port 8080
